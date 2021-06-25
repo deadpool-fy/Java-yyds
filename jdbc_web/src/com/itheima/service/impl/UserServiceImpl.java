@@ -79,14 +79,11 @@ public class UserServiceImpl implements UserService {
                 user.setUid(uid);
                 //3.生成员工编号
                 user.setUcode(uid);
-
                 //出现异常
                 //int n = 1 / 0;
-
                 //4.保存
                 userDao.save(con, user);
             }
-
             //提交事务
             con.commit();
 
