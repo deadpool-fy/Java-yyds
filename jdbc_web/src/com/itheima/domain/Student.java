@@ -1,7 +1,7 @@
 package com.itheima.domain;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 
 /**
  * 学生的实体类

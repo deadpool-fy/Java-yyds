@@ -15,7 +15,7 @@ public class JDBCUtils {
     ;
 
     //2.声明配置信息变量
-    private static String driverClass;
+    private static String driver;
     private static String url;
     private static String username;
     private static String password;
@@ -32,13 +32,13 @@ public class JDBCUtils {
             prop.load(is);
 
             //获取信息为变量赋值
-            driverClass = prop.getProperty("driverClass");
+            driver = prop.getProperty("driver");
             url = prop.getProperty("url");
             username = prop.getProperty("username");
             password = prop.getProperty("password");
 
             //注册驱动
-            Class.forName(driverClass);
+            Class.forName(driver);
 
         } catch (Exception e) {
             e.printStackTrace();

@@ -1,10 +1,12 @@
 package com.itheima.service.impl;
 
 import com.itheima.dao.StudentDao;
-import com.itheima.dao.impl.StudentDaoImpl;
 import com.itheima.domain.Student;
 import com.itheima.service.StudentService;
+import com.itheima.utils.MyBatisUtils;
+import org.apache.ibatis.session.SqlSession;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,31 +17,46 @@ import java.util.List;
  */
 public class StudentServiceImpl implements StudentService {
 
-    private StudentDao studentDao = new StudentDaoImpl();
-
     @Override
     public List<Student> findAll() {
-        return studentDao.findAll();
+        SqlSession sqlSession = MyBatisUtils.getSqlSession();
+        StudentDao mapper = sqlSession.getMapper(StudentDao.class);
+        ArrayList<Student> list = mapper.findAll();
+        sqlSession.close();
+        return list;
     }
 
     @Override
     public Student findById(Integer sid) {
-        return studentDao.findById(sid);
+        SqlSession sqlSession = MyBatisUtils.getSqlSession();
+        StudentDao mapper = sqlSession.getMapper(StudentDao.class);
+        Student stu = mapper.findById(sid);
+        sqlSession.close();
+        return stu;
     }
 
     @Override
     public void save(Student student) {
         //保存
-        studentDao.insert(student);
+        SqlSession sqlSession = MyBatisUtils.getSqlSession();
+        StudentDao mapper = sqlSession.getMapper(StudentDao.class);
+        mapper.insert(student);
+        sqlSession.close();
     }
 
     @Override
     public void update(Student student) {
-        studentDao.update(student);
+        SqlSession sqlSession = MyBatisUtils.getSqlSession();
+        StudentDao mapper = sqlSession.getMapper(StudentDao.class);
+        mapper.update(student);
+        sqlSession.close();
     }
 
     @Override
     public void delete(Integer sid) {
-        studentDao.delete(sid);
+        SqlSession sqlSession = MyBatisUtils.getSqlSession();
+        StudentDao mapper = sqlSession.getMapper(StudentDao.class);
+        mapper.delete(sid);
+        sqlSession.close();
     }
 }

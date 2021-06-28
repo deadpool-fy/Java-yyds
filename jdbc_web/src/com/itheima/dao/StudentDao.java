@@ -1,6 +1,10 @@
 package com.itheima.dao;
 
 import com.itheima.domain.Student;
+import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.ArrayList;
 
@@ -9,17 +13,22 @@ import java.util.ArrayList;
  */
 public interface StudentDao {
     //查询所有学生信息
+    @Select("select * from student")
     public abstract ArrayList<Student> findAll();
 
     //条件查询，根据id获取学生信息
-    public abstract Student findById(Integer id);
+    @Select("select * from student where sid=#{sid}")
+    public abstract Student findById(Integer sid);
 
     //新增学生信息
+    @Insert("insert into student values (#{sid},#{name},#{age},#{birthday})")
     public abstract int insert(Student stu);
 
     //修改学生信息
+    @Update("update student set name=#{name},age=#{age},birthday=#{birthday} where sid=#{sid}")
     public abstract int update(Student stu);
 
     //删除学生信息
-    public abstract int delete(Integer id);
+    @Delete("delete from student where sid=#{sid}")
+    public abstract int delete(Integer sid);
 }
