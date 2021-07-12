@@ -10,6 +10,7 @@ import java.io.IOException;
 public class MyBatisUtils {
     private MyBatisUtils() {
     }
+
     private static SqlSessionFactory sqlSessionFactory;
 
     static {
@@ -20,7 +21,7 @@ public class MyBatisUtils {
         }
     }
 
-    public static SqlSession getSqlSession(){
+    public static SqlSession getSqlSession() {
         return sqlSessionFactory.openSession(true);
     }
 }

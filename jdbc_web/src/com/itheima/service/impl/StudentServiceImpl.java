@@ -30,9 +30,9 @@ public class StudentServiceImpl implements StudentService {
     public Student findById(Integer sid) {
         SqlSession sqlSession = MyBatisUtils.getSqlSession();
         StudentDao mapper = sqlSession.getMapper(StudentDao.class);
-        Student stu = mapper.findById(sid);
+        Student student = mapper.findById(sid);
         sqlSession.close();
-        return stu;
+        return student;
     }
 
     @Override

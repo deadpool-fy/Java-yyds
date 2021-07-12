@@ -14,21 +14,21 @@ import java.util.ArrayList;
 public interface StudentDao {
     //查询所有学生信息
     @Select("select * from student")
-    public abstract ArrayList<Student> findAll();
+    ArrayList<Student> findAll();
 
     //条件查询，根据id获取学生信息
     @Select("select * from student where sid=#{sid}")
-    public abstract Student findById(Integer sid);
+    Student findById(Integer sid);
 
     //新增学生信息
     @Insert("insert into student values (#{sid},#{name},#{age},#{birthday})")
-    public abstract int insert(Student stu);
+    int insert(Student stu);
 
     //修改学生信息
     @Update("update student set name=#{name},age=#{age},birthday=#{birthday} where sid=#{sid}")
-    public abstract int update(Student stu);
+    int update(Student stu);
 
     //删除学生信息
     @Delete("delete from student where sid=#{sid}")
-    public abstract int delete(Integer sid);
+    int delete(Integer sid);
 }
