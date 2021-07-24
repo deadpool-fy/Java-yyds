@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="junit-4.9">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/jdbc_student/libs/junit-4.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdbc_student/libs/mysql-connector-java-5.1.37-bin.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

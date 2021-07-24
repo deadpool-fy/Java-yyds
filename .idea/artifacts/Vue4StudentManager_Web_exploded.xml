@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Vue4StudentManager:Web exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Vue4StudentManager_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="vue_StudentManager/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="vue_StudentManager" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="commons-beanutils-1.9.3 (2)" />
+          <element id="library" level="project" name="commons-beanutils-1.9.3 (3)" />
+          <element id="library" level="project" name="jackson-annotations-2.2.3" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
